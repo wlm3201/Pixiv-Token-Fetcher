@@ -11,6 +11,7 @@ function saveToken(tokens) {
 function showToken(tokens) {
   setText('#rtoken', tokens.refresh_token)
   setText('#atoken', tokens.access_token)
+  setText('#uid', tokens.user.id)
 }
 let rpc = {
   async [fn.loadToken]() {
@@ -73,7 +74,7 @@ let rpc = {
       })
       .then((r) => r.json())
       .catch(() => null)
-    if (!tokens.refresh_token) return log(`获取token失败`)
+    if (!tokens?.refresh_token) return log(`获取token失败`)
     log(`获取token成功`)
     saveToken(tokens)
   },
@@ -93,7 +94,7 @@ let rpc = {
       })
       .then((r) => r.json())
       .catch(() => null)
-    if (!tokens.access_token) return log(`刷新token失败`)
+    if (!tokens?.access_token) return log(`刷新token失败`)
     log(`刷新token成功`)
     saveToken(tokens)
   },
