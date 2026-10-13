@@ -1,0 +1,7 @@
+.app {
+  width: 25rem;
+}
+#rtoken,
+#atoken {
+  user-select: all;
+}
