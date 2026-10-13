@@ -17,11 +17,5 @@
     "default_popup": "popup.html"
   },
   "permissions": ["storage", "cookies", "webRequest", "tabs"],
-  "host_permissions": ["<all_urls>"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "run_at": "document_idle"
-    }
-  ]
+  "host_permissions": ["<all_urls>"]
 }
